@@ -871,5 +871,5 @@ header div h3 {
     margin-left: 20px
 }
 header div {
-    display: inline;
+    display: inline-block;
 }
