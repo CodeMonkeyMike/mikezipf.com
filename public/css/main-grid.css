@@ -856,8 +856,19 @@
 
 .profile-photo {
     width: 100%;
-    max-width: 112px;
-    border-radius: 56px;
+    max-width: 280px;
+    border-radius: 140px;
     position: relative;
-    top: 30px;
+    top: 80px;
+}
+header h1 {
+    display: inline;
+    font-weight: 200;
+    margin-left: 20px
+}
+header h3 {
+    color: #696969;
+    display: inline;
+    font-weight: 200;
+    margin-left: 20px
 }
