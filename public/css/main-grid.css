@@ -862,12 +862,10 @@
     top: 80px;
 }
 header div h1 {
-    font-weight: 200;
     margin-left: 20px
 }
-header div h3 {
+header div h2 {
     color: #696969;
-    font-weight: 200;
     margin-left: 20px
 }
 header div {
@@ -875,4 +873,8 @@ header div {
 }
 header div h1 small {
     color: gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
 }
