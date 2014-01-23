@@ -861,14 +861,15 @@
     position: relative;
     top: 80px;
 }
-header h1 {
-    display: inline;
+header div h1 {
     font-weight: 200;
     margin-left: 20px
 }
-header h3 {
+header div h3 {
     color: #696969;
-    display: inline;
     font-weight: 200;
     margin-left: 20px
+}
+header div {
+    display: inline;
 }
