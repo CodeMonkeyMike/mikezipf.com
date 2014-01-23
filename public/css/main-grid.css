@@ -873,3 +873,6 @@ header div h3 {
 header div {
     display: inline-block;
 }
+header div h1 small {
+    color: gray;
+}
