@@ -858,22 +858,21 @@
     width: 100%;
     max-width: 280px;
     border-radius: 140px;
-    position: relative;
-    top: 80px;
+    /*position: relative;*/
+    /*top: 80px;*/
 }
 header div h1 {
     margin-left: 20px
 }
 header div h2 {
     color: #696969;
-    margin-left: 20px
 }
 header div {
+    vertical-align: text-bottom;
     display: inline-block;
 }
-header div h1 small {
+header div h1 span {
     color: gray;
-    font-size: 50%;
 }
 
 h1, h2, h3, h4, h5, h6 {
