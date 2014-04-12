@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Responsive Pageflip Menu</title>
+		<meta name="description" content="Responsive Menu" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<link rel="stylesheet" href="css/styles.css">
+		
+		<script src="js/modernizr.custom.79639.js"></script>
+        <script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/simpleCart.min.js"></script>
+
+		<script>
+		$(document).ready(function(){
+
+			$('.placeorder').click(function(){
+				$('.modal').modal({backdrop:true,});
+			});
+		});
+		</script>
+		<script>
+		simpleCart({
+			checkout: {
+				type: "PayPal",
+				email: "your@email.com"
+			},
+			 cartColumns: [
+				{ attr: "name" , label: "Name" } ,
+				{ attr: "price" , label: "Price", view: 'currency' } ,
+				{ view: "decrement" , label: "&nbsp;" , text: "-" } ,
+				{ attr: "quantity" , label: "Qty" } ,
+				{ view: "increment" , label: "&nbsp;" , text: "+" } ,
+				{ attr: "total" , label: "SubTotal", view: 'currency' } ,
+				{ view: "remove" , text: "Remove" , label: "&nbsp;" }
+			],
+		
+		});
+		// simple callback example
+		simpleCart.bind( 'beforeAdd' , function( item ){
+			//alert("modal");
+			$('.modal').modal({
+				backdrop:	true,
+			});
+		});
+		</script>		
+
+		
+	</head>
+	<body>
+		<div id="container" class="container">	
+
+			<div class="menu-panel">
+				<h3>MENU</h3>
+				<ul id="menu-toc" class="menu-toc">
+					<li class="menu-toc-current"><a href="#item1">APPETIZERS</a></li>
+					<li><a href="#item2">SEAFOOD</a></li>
+					<li><a href="#item3">DRINKS</a></li>
+					<li><a href="#item4">TEXT PAGE</a></li>
+					<li><a href="#" class="placeorder">YOUR ORDER</a></li>
+				</ul>
+			</div>
+
+			<div class="bb-custom-wrapper">
+				<div id="bb-bookblock" class="bb-bookblock">
+					<div class="bb-item" id="item1">
+						<div class="content">
+							<div class="scroller">
+
+								<h3>MENU / <strong>APPETIZERS</strong></h3>
+								
+								<div class="section">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-01">
+
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">1. TARO SHRIMP</span>
+													<span class="price item_price">$ 8.50</span>
+												</div>
+
+												<div class="description">Shrimp wrapped in taro, deep fried and served with chili sauce</div>
+												<div class="legend"><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-02">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">2. MINI-ROLLS (6)</span>
+													<span class="price item_price">$ 5.95</span>
+												</div>
+												<div class="description">Fried spring rolls stuffed with vegetables and served with Thai spicy sauce</div>
+												<div class="legend"><span>VEG</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+											</div>
+										</div>
+									</div><!-- end .row -->
+									<div class="row">
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-03">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">3. FRIED CALAMARI</span>
+													<span class="price item_price">$ 7.95</span>
+												</div>
+												<div class="description">Fried spicy golden squid with bell pepper, onion, spices and hot sauce</div>
+												<div class="legend"><span>DEEP FRIED</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-04">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">4. PANDAN CHICKEN (6)</span>
+													<span class="price item_price">$ 6.95</span>
+												</div>
+												<div class="description">Deep fried chicken wings marinated and served with pandan leaves</div>
+												<div class="legend"><span>DEEP FRIED</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+									</div><!-- end .row -->
+									<div class="row">
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-05">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">5. WONTON</span>
+													<span class="price item_price">$ 3.50</span>
+												</div>
+												<div class="description">Pork and shrimp wonton in a ginger chicken broth</div>
+												<div class="legend"><span>MEAT</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-06">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">6. SOTO MADURA</span>
+													<span class="price item_price">$ 6.95</span>
+												</div>
+												<div class="description">Indonesian's favourite soup! Served with sliced beef, boiled egg and shrimp crackers</div>
+												<div class="legend"><span>VEG</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+									</div><!-- end .row -->
+									<div class="row">
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-07">
+
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">7. CANTONESE</span>
+													<span class="price item_price">$ 8.95</span>
+												</div>
+
+												<div class="description">Market seafood with fresh herbs and white wine</div>
+												<div class="legend"><span>VEG</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-08">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">8. PINEAPPLE</span>
+													<span class="price item_price">$ 8.50</span>
+												</div>
+												<div class="description">Choice of chicken or shrimp stir-fried with peas, raisin, pineapple and Thai spices served in a pineapple shell</div>
+												<div class="legend"><span>VEG</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+									</div><!-- end .row -->
+									<div class="row">
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-09">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">9. BASIL</span>
+													<span class="price item_price">$ 8.50</span>
+												</div>
+												<div class="description">A mixed vegetables fried rice with basil leaves</div>
+												<div class="legend"><span>VEG</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="item simpleCart_shelfItem" id="item-10">
+												<div class="info">
+													<div class="dots"></div>
+													<span class="name item_name">10. NASI LEMAK</span>
+													<span class="price item_price">$ 9.50</span>
+												</div>
+												<div class="description">Coconut flavored rice served with ayam and beef rendang</div>
+												<div class="legend"><span>VEG</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+												<input type="hidden" value="1" class="item_Quantity">
+											</div>
+										</div>
+									</div><!-- end .row -->
+								</div><!-- end .section -->
+							
+							
+							</div>
+						</div>
+					</div>
+					<div class="bb-item" id="item2">
+						<div class="content">
+							<div class="scroller">
+
+								<h3>MENU / <strong>SEAFOOD</strong></h3>
+								
+								<div class="row">
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-11">
+
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">11. THAI STYLE FISH (SNAPPER)</span>
+												<span class="price item_price">$ 22.50</span>
+											</div>
+
+											<div class="description">Whole snapper deep fried and topped with a spicy lemongrass and tamarind sauce</div>
+											<div class="legend"><span>FISH</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+											<input type="hidden" value="1" class="item_Quantity">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-12">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">12. BANANA LEAF GRILLED SALMON</span>
+												<span class="price item_price">$ 21.50</span>
+											</div>
+											<div class="description">Fresh salmon slowly grilled in banana leaf with a spicy lemongrass shrimp paste</div>
+											<div class="legend"><span>FISH</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+											<input type="hidden" value="1" class="item_Quantity">
+										</div>
+									</div>
+								</div><!-- end .row -->
+								<div class="row">
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-13">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">13. PENANG JUMBO PRAWN</span>
+												<span class="price item_price">$ 23.50</span>
+											</div>
+											<div class="description">Jumbo prawn sauteed in spicy brown sauce with dried shrimp, lemongrass, chillies and spices</div>
+											<div class="legend"><span>SEAFOOD</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+											<input type="hidden" value="1" class="item_Quantity">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-14">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">14. STEAMED LOBSTER DUNGENESS CRAB</span>
+												<span class="price item_price">$ 28.50</span>
+											</div>
+											<div class="description">Rice noodles topped with lobster or crab slowly steamed with garlic, egg white and young ginger</div>
+											<div class="legend"><span>SEAFOOD</span><span>SPICY</span><a class="add item_add" href="javascript:;">ADD</a></div>
+											<input type="hidden" value="1" class="item_Quantity">
+										</div>
+									</div>
+								</div><!-- end .row -->
+							
+							</div>
+						</div>
+					</div>
+					<div class="bb-item" id="item3">
+						<div class="content">
+							<div class="scroller">
+							
+								<h3>MENU / <strong>DRINKS</strong></h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-15">
+
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">15. VICTORIA BITTER</span>
+												<span class="price item_price">$ 3.50</span>
+											</div>
+											<input type="hidden" value="1" class="item_Quantity">
+											<div class="legend"><a class="add item_add" href="javascript:;">ADD</a></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-16">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">16. HOT CHOCOLATE</span>
+												<span class="price item_price">$ 2.50</span>
+											</div>
+											<input type="hidden" value="1" class="item_Quantity">
+											<div class="legend"><a class="add item_add" href="javascript:;">ADD</a></div>
+										</div>
+									</div>
+								</div><!-- end .row -->
+								<div class="row">
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-17">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">17. LEMON LIME BITTERS</span>
+												<span class="price item_price">$ 3.50</span>
+											</div>
+											<input type="hidden" value="1" class="item_Quantity">
+											<div class="legend"><a class="add item_add" href="javascript:;">ADD</a></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-18">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">18. MINERAL WATER</span>
+												<span class="price item_price">$ 1.50</span>
+											</div>
+											<input type="hidden" value="1" class="item_Quantity">
+											<div class="legend"><a class="add item_add" href="javascript:;">ADD</a></div>
+										</div>
+									</div>
+								</div><!-- end .row -->
+								<div class="row">
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-19">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">19. COKE / DIET</span>
+												<span class="price item_price">$ 3.50</span>
+											</div>
+											<input type="hidden" value="1" class="item_Quantity">
+											<div class="legend"><a class="add item_add" href="javascript:;">ADD</a></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="item simpleCart_shelfItem" id="item-20">
+											<div class="info">
+												<div class="dots"></div>
+												<span class="name item_name">20. ORANGE / APPLE JUICE</span>
+												<span class="price item_price">$ 3.50</span>
+											</div>
+											<input type="hidden" value="1" class="item_Quantity">
+											<div class="legend"><a class="add item_add" href="javascript:;">ADD</a></div>
+										</div>
+									</div>
+								</div><!-- end .row -->
+							</div>
+						</div>
+					</div>
+					<div class="bb-item" id="item4">
+						<div class="content">
+							<div class="scroller">
+								<h2>Text page</h2>
+								
+								<p><strong>Here you can add some regular content too!</strong> Inform your customers about special offers or other interesting things about your restaurant.</p>
+
+								<p>The pretty wife of one of the czar's valets had the following unpleasant
+								experience of his skill. The husband of the "maid" accused her of
+								flirting, and vowed revenge. The czar noticed the valet seated in the
+								ante-room, looking forlorn, and asked the cause of his dejection. The
+								wicked valet replied that his wife had a tooth which gave her great pain,
+								keeping them both awake day and night, but would not have it drawn.</p>
+
+								<p>"Send her to me," said the czar.</p>
+
+								<p>The woman was brought, but persisted in affirming that her teeth were
+								sound, and never ached. The valet alleged that this was always the way she
+								did when the physician was called; therefore, in spite of her cries and
+								remonstrances, the king ordered her husband to hold her head between his
+								knees, when the czar drew out his instruments and instantly extracted the
+								tooth designated by the husband, disregarding the cries of the unfortunate
+								victim.</p>
+
+								<p>In a few days the czar was informed that the thing was a put-up job by the
+								jealous husband, in order to punish, if not mar the beauty of, his gallant
+								wife, whereupon the instruments were again brought into requisition; and
+								this time the naughty valet was the sufferer, to the extent of losing a
+								sound and valuable tooth.</p>
+
+								<p><em>From <a href="http://www.gutenberg.org/ebooks/41595" target="_blank">"The Funny Side of Physic"</a> by A. D. Crabtre</em></p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				
+				<nav>
+					<span id="bb-nav-prev">&larr;</span>
+					<span id="bb-nav-next">&rarr;</span>
+				</nav>
+
+				<span id="tblcontents" class="menu-button">Table of Contents</span>
+
+			</div>
+				
+		</div><!-- /container -->
+
+		<script src="js/jquery.mousewheel.js"></script>
+		<script src="js/jquery.jscrollpane.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script src="js/page.js"></script>
+		<script>
+			$(function() {
+
+				Page.init();
+
+			});
+		</script>
+
+		
+		<div class="modal fade">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Your order</h4>
+			  </div>
+			  <div class="modal-body">
+						<div class="simpleCart_items"></div>
+						<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+						
+						<ul class="deliveryaddress">
+							<li><label>House Number</label><input type="text" name="houseno" id="houseno" /></li>
+							<li><label>Street</label><input type="text" name="street" id="street" /></li>
+							<li><label>City</label><input type="text" name="city" id="city" /></li>
+							<li><label>Postcode</label><input type="text" name="postcode" id="postcode" /></li>
+							<li><label>Phone</label><input type="text" name="phone" id="phone" /></li>
+						</ul>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Add more</button>
+				<a href="javascript:;" class="btn btn-primary simpleCart_checkout">Checkout</a>
+			  </div>
+
+			</div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->		
+		
+		
+		</body>
+</html>
